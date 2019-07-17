@@ -51,20 +51,20 @@ const FriendsListReducer = (state = InitialState, action) => {
         friendsList: changeFavouriteList
       };
       return newState;
-    case ActionTypes.CHANGE_GENDER:  
-    const changeGender = state.friendsList.map(item => {
-      if (item.id === action.item.id) {
-        item.gender = action.item.gender;
-        return item;
-      } else {
-        return item;
-      }
-    });
-    newState = {
-      ...state,
-      friendsList: changeGender
-    };
-    return newState;
+    case ActionTypes.CHANGE_GENDER:
+      const changeGender = state.friendsList.map(item => {
+        if (item.id === action.item.id) {
+          item.gender = action.item.gender;
+          return item;
+        } else {
+          return item;
+        }
+      });
+      newState = {
+        ...state,
+        friendsList: changeGender
+      };
+      return newState;
     default:
       return state;
   }

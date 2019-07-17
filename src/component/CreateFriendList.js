@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as ActionTypes from "../store/actions/FriendListActions";
-import { Card } from "@material-ui/core";
 
 let id = 10;
 
 const TweetUI = props => {
-  //  React Hook useState instead of state
+  //  React Hook useState instead of state 16.8
   const [friendName, setFriendName] = React.useState("");
 
   const handleChange = event => {
@@ -28,17 +27,15 @@ const TweetUI = props => {
   };
 
   return (
-    <Card className="card">
-          <input
-            type="text"
-            id="friend-name"
-            placeholder="Type the name of a friend"
-            value={friendName}
-            onChange={handleChange}
-            onKeyPress={handleChange}
-            className="text-field"
-          />
-    </Card>
+    <input
+      type="text"
+      id="friend-name"
+      placeholder="Type the name of a friend..."
+      value={friendName}
+      onChange={handleChange}
+      onKeyPress={handleChange}
+      className="text-field"
+    />
   );
 };
 
@@ -53,7 +50,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TweetUI);
+export default connect(mapStateToProps, mapDispatchToProps)(TweetUI);

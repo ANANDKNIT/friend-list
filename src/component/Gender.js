@@ -30,19 +30,19 @@ const GenderView = props => {
           <FormControlLabel
             labelPlacement="end"
             value="female"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Female"
           />
           <FormControlLabel
             labelPlacement="end"
             value="male"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Male"
           />
           <FormControlLabel
             labelPlacement="end"
             value="other"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Other"
           />
         </RadioGroup>

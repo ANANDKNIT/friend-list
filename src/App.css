@@ -1,0 +1,41 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh !important;
+  background-color: #f2f1f2;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 10px;
+  border-radius: 0 !important;
+  overflow-y: auto !important;
+}
+
+.friend-list-heading {
+  background-color: gray !important;
+  width: 520px !important;
+}
+
+.friend-button {
+  border: 1px solid lightgray !important;
+  border-radius: 0 !important;
+}
+
+.grid-container {
+  border-bottom: 1px solid lightgray;
+  min-height: 145px;
+  padding: 10px;
+}
+.text-field {
+  min-height: 32px !important;
+  border-bottom: 1px solid gray;
+}
+.friend-gender {
+  padding-top: 1rem;
+  width: 100% !important;
+}

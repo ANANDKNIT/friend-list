@@ -10,15 +10,18 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  padding: 10px;
+  min-width: 50%;
+  max-width: 50%;
   border-radius: 0 !important;
   overflow-y: auto !important;
+  z-index: 1;
 }
 
 .friend-list-heading {
   background-color: gray !important;
-  width: 520px !important;
+  min-width: 50%;
+  max-width: 50%;
+  z-index: 0 !important;
 }
 
 .friend-button {
@@ -29,12 +32,19 @@
 .grid-container {
   border-bottom: 1px solid lightgray;
   min-height: 145px;
-  padding: 10px;
+  padding: 4%;
 }
+
 .text-field {
-  min-height: 32px !important;
-  border-bottom: 1px solid gray;
+  height: 20px;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid gray !important;
+  padding: 4% !important;
+  font-size: 1.2rem;
 }
+
+
 .friend-gender {
   padding-top: 1rem;
   width: 100% !important;

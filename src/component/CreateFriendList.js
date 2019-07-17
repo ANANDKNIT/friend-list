@@ -1,18 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as ActionTypes from "../store/actions/FriendListActions";
-import { Card, TextField } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 
 let id = 10;
 
 const TweetUI = props => {
   //  React Hook useState instead of state
   const [friendName, setFriendName] = React.useState("");
+
   const handleChange = event => {
     const value = event.target.value;
-    // set data Using Hook
     setFriendName(value);
-    //friend name should not be empty and on press of enter add friend to list
     if (value && (event.keyCode === 13 || event.key === "Enter")) {
       handleAddFriend(value);
     }
@@ -25,22 +24,20 @@ const TweetUI = props => {
       { id: id++, friendName: value, favourite: false, gender: "" }
     ];
     props.addFriend(listComments);
-    // After submit Clear textarea
     setFriendName("");
   };
 
   return (
     <Card className="card">
-      <TextField
-        id="standard-name"
-        placeholder="Type the name of a friend"
-        value={friendName}
-        onChange={handleChange}
-        margin="normal"
-        fullWidth
-        onKeyPress={handleChange}
-        className="text-field"
-      />
+          <input
+            type="text"
+            id="friend-name"
+            placeholder="Type the name of a friend"
+            value={friendName}
+            onChange={handleChange}
+            onKeyPress={handleChange}
+            className="text-field"
+          />
     </Card>
   );
 };
@@ -56,4 +53,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TweetUI);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TweetUI);

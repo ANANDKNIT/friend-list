@@ -32,6 +32,7 @@ const TweetUI = props => {
       type="text"
       id="friend-name"
       placeholder="Type the name of a friend..."
+      autoComplete="off"
       value={friendName}
       onChange={handleChange}
       onKeyPress={handleChange}

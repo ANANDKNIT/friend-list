@@ -29,6 +29,7 @@
   border: 1px solid lightgray !important;
   border-radius: 0 !important;
   margin: 5px !important;
+  z-index: 2;
 }
 
 .grid-container {
@@ -64,6 +65,7 @@
   .card {
     min-width: 90%;
     max-width: 90%;
+    padding:2%;
   }
   .text-field {
     min-width: 92%;

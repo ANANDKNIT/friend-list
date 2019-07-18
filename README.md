@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## This project is deployed in the Following Link
+ open [https://distracted-villani-b6a53f.netlify.com](https://distracted-villani-b6a53f.netlify.com/) to view it in the browser
+ Demo : [https://distracted-villani-b6a53f.netlify.com](https://distracted-villani-b6a53f.netlify.com/) 
 ## Available Scripts
 
 In the project directory, you can run:

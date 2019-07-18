@@ -5,7 +5,8 @@ import * as ActionTypes from "../store/actions/FriendListActions";
 let id = 10;
 
 const TweetUI = props => {
-  //  React Hook useState instead of state 16.8
+
+  //  React Hook useState instead of state reatc version should be >16.6
   const [friendName, setFriendName] = React.useState("");
 
   const handleChange = event => {

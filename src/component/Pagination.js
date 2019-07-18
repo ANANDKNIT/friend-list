@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as ActionTypes from "../store/actions/FriendListActions";
 const Pagination = props => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(props.pagination);
+  console.log(props.pagination,active,'pagination value')
   // count number of pages for pagination number
-  const pages = new Array(Math.ceil(props.item.length / 2));
+  const pages = new Array(Math.ceil(props.item.length / 3));
   for (let i = 0; i < pages.length; i++) {
     pages[i] = i + 1;
   }
 
   const handlePagination = index => {
-    if (index !== active) {
-      console.log(index);
       setActive(index);
       props.handlePagination(index);
-    }
   };
 
   return (
@@ -47,7 +45,6 @@ const Pagination = props => {
 };
 const mapStateToProps = state => {
   const pagination = state.pagination;
-  console.log(pagination);
   return { pagination };
 };
 const mapDispatchToProps = dispatch => {

@@ -13,13 +13,13 @@
   min-width: 50%;
   max-width: 50%;
   border-radius: 0 !important;
-  padding: 2%;
+  padding: 1%;
 }
 
 .friend-list-heading {
   background-color: gray !important;
-  min-width: 54%;
-  max-width: 54%;
+  min-width: 52%;
+  max-width: 52%;
 }
 .button-wrapper {
   position: absolute;
@@ -38,8 +38,8 @@
 
 .text-field {
   display: flex;
-  min-width: 52%;
-  max-width: 52%;
+  min-width: 50%;
+  max-width: 50%;
   height: 1rem !important;
   border-left: none;
   border-right: none;

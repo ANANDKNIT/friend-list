@@ -14,7 +14,8 @@ const InitialState = {
       favourite: false,
       gender: "male"
     }
-  ]
+  ],
+  pagination: 1
 };
 
 const FriendsListReducer = (state = InitialState, action) => {
@@ -49,6 +50,13 @@ const FriendsListReducer = (state = InitialState, action) => {
       newState = {
         ...state,
         friendsList: changeFavouriteList
+      };
+      return newState;
+    case ActionTypes.CHANGE_PAGINATION:
+      console.log(action.value);
+      newState = {
+        ...state,
+        pagination: action.value
       };
       return newState;
     case ActionTypes.CHANGE_GENDER:

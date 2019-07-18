@@ -6,17 +6,33 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import FavouriteSelectedIcon from "@material-ui/icons/Grade";
 import FavouriteIcon from "@material-ui/icons/GradeOutlined";
 import ManageGender from "./Gender";
+import Pagination from "./Pagination";
 
 const ShowFriends = props => {
+  
   // return null if friend list is empty
   if (!props.friendsList) {
     return null;
   }
+  const showEntriesBasedonPagination = props.friendsList.filter(
+    (item, index) => {
+      const start = props.pagination - 1;
+      const end = start + 2;
+      // if (props.pagination === 2) {
+      //   // console.log(item, "index 2");
+      //   return item;
+      // } start =2 -1 = start 1 end =3
+      if (index >= start && index < end) {
+        return item;
+      } else return null;
+    }
+  );
+  console.log(showEntriesBasedonPagination, "filter");
 
   return (
     <Card className="card">
-      {props.friendsList.map(item => {
-        return (
+      {showEntriesBasedonPagination.map((item, index) => {
+        return index > 1 ? null : (
           <React.Fragment key={item.id}>
             <div className="grid-container">
               <div>
@@ -48,13 +64,19 @@ const ShowFriends = props => {
           </React.Fragment>
         );
       })}
+      {props.friendsList.length > 2 ? (
+        <Pagination item={props.friendsList} />
+      ) : (
+        ""
+      )}
     </Card>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    friendsList: state.friendsList
+    friendsList: state.friendsList,
+    pagination: state.pagination
   };
 };
 

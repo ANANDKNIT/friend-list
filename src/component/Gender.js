@@ -53,8 +53,12 @@ const GenderView = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleGenderChange: item => dispatch({ type: ActionTypes.CHANGE_GENDER, item: item })
+    handleGenderChange: item =>
+      dispatch({ type: ActionTypes.CHANGE_GENDER, item: item })
   };
 };
 
-export default connect(null, mapDispatchToProps)(GenderView);
+export default connect(
+  null,
+  mapDispatchToProps
+)(GenderView);

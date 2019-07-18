@@ -50,4 +50,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TweetUI);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TweetUI);

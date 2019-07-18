@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #f2f1f2;
+  min-height: 100vh;
 }
 
 .card {
@@ -13,39 +13,100 @@
   min-width: 50%;
   max-width: 50%;
   border-radius: 0 !important;
-  overflow-y: auto !important;
-  z-index: 1;
+  padding: 1%;
 }
 
 .friend-list-heading {
   background-color: gray !important;
-  min-width: 50%;
-  max-width: 50%;
-  z-index: 0 !important;
+  min-width: 52%;
+  max-width: 52%;
 }
-
+.button-wrapper {
+  position: absolute;
+  right: 25%;
+}
 .friend-button {
   border: 1px solid lightgray !important;
   border-radius: 0 !important;
+  margin: 5px !important;
 }
 
 .grid-container {
-  border-bottom: 1px solid lightgray;
-  min-height: 145px;
-  padding: 4%;
+  display: flex;
+  flex-direction: row;
 }
 
 .text-field {
-  height: 20px;
+  display: flex;
+  min-width: 50%;
+  max-width: 50%;
+  height: 1rem !important;
   border-left: none;
   border-right: none;
+  border-top: none;
   border-bottom: 2px solid gray !important;
-  padding: 4% !important;
+  padding: 1% !important;
   font-size: 1.2rem;
 }
 
-
 .friend-gender {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
   width: 100% !important;
+  border-bottom: 1px solid lightgray;
+}
+
+@media only screen and (max-width: 600px) {
+  .button-wrapper {
+    display: grid;
+    right: 5%;
+  }
+  .card {
+    min-width: 90%;
+    max-width: 90%;
+  }
+  .text-field {
+    min-width: 92%;
+    max-width: 92%;
+    font-size: 0.8rem;
+  }
+  .friend-list-heading {
+    max-width: 94%;
+    font-size: 0.5rem;
+  }
+  .friend-gender {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    font-size: 0.5rem;
+  }
+}
+
+.pagination {
+  display: flex;
+  padding-top:2%;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination li {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  font-size: 22px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.pagination li.active {
+  background-color: dodgerblue;
+  color: white;
+  border: 1px solid dodgerblue;
+  cursor: pointer;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
 }

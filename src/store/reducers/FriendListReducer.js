@@ -14,7 +14,8 @@ const InitialState = {
       favourite: false,
       gender: "male"
     }
-  ]
+  ],
+  pagination: 1
 };
 
 const FriendsListReducer = (state = InitialState, action) => {
@@ -31,9 +32,12 @@ const FriendsListReducer = (state = InitialState, action) => {
       const deleteFriend = state.friendsList.filter(
         item => item.id !== action.id
       );
+      const setpagination =
+        action.setPagination === 1 ? state.pagination - 1 : state.pagination;
       newState = {
         ...state,
-        friendsList: deleteFriend
+        friendsList: deleteFriend,
+        pagination: setpagination
       };
       return newState;
 
@@ -49,6 +53,12 @@ const FriendsListReducer = (state = InitialState, action) => {
       newState = {
         ...state,
         friendsList: changeFavouriteList
+      };
+      return newState;
+    case ActionTypes.CHANGE_PAGINATION:
+      newState = {
+        ...state,
+        pagination: action.value
       };
       return newState;
     case ActionTypes.CHANGE_GENDER:

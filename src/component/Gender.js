@@ -30,19 +30,19 @@ const GenderView = props => {
           <FormControlLabel
             labelPlacement="end"
             value="female"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Female"
           />
           <FormControlLabel
             labelPlacement="end"
             value="male"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Male"
           />
           <FormControlLabel
             labelPlacement="end"
             value="other"
-            control={<Radio color="primary" />}
+            control={<Radio color="primary" fontSize="small" />}
             label="Other"
           />
         </RadioGroup>
@@ -53,8 +53,12 @@ const GenderView = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleGenderChange: item => dispatch({ type: ActionTypes.CHANGE_GENDER, item: item })
+    handleGenderChange: item =>
+      dispatch({ type: ActionTypes.CHANGE_GENDER, item: item })
   };
 };
 
-export default connect(null, mapDispatchToProps)(GenderView);
+export default connect(
+  null,
+  mapDispatchToProps
+)(GenderView);

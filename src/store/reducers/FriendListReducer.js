@@ -33,7 +33,10 @@ const FriendsListReducer = (state = InitialState, action) => {
         item => item.id !== action.id
       );
       const setpagination =
-        action.setPagination === 1 ? state.pagination - 1 : state.pagination;
+        action.setPagination === 1 && state.pagination !== 1
+          ? state.pagination - 1
+          : state.pagination;
+      console.log(setpagination);
       newState = {
         ...state,
         friendsList: deleteFriend,

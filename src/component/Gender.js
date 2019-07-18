@@ -18,7 +18,7 @@ const GenderView = props => {
 
   return (
     <div className="friend-gender">
-      <FormControl component="fieldset" fullWidth>
+      <FormControl component="fieldset">
         <FormLabel>Gender</FormLabel>
         <RadioGroup
           aria-label="Gender"
